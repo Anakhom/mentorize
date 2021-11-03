@@ -16,24 +16,25 @@ const mentorSchema = new Schema({
   },
   firstName: {
     type: String,
-    required: true,
+    required: false,
   },
   lastName: {
     type: String,
-    required: true,
+    required: false,
   },
   aboutMe: {
     type: String,
-    required: true,
+    required: false,
   },
   experience: {
     type: String,
-    required: true,
+    required: false,
   },
   stack: [{
     type: Schema.Types.ObjectId,
     ref: 'Tag',
-  }],
+  }]
+  ,
   createdAt: {
     type: Date, 
     default: Date.now

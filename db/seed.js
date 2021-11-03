@@ -12,14 +12,14 @@ const { dbUrl, options } = require('./config');
 
     console.log('Seeding...');
 
-    await Mentor.insertMany([
-      { login: "denis01", 
-      email: "denis@denis.ru", 
+    await User.insertMany([
+      { login: "pupkin1", 
+      email: "pupkin@pi.ru", 
       password: '123123', 
-      firstName: "Denis", 
-      lastName: "Obraztsov", 
-      aboutMe: 'Люблю кодить. Помогу советом.', 
-      experience: 'Elbrus Bootcamp - полгода',
+      firstName: "Бил", 
+      lastName: "Гейтс", 
+      aboutMe: 'Обращайтесь', 
+      experience: 'Microsoft',
       stack: [
         '6181490077384b3d748f9484', 
         '6181490077384b3d748f9485',
