@@ -1,7 +1,5 @@
-const dbUrl = 'mongodb://localhost:27017/mentorize';
+const dbUrl = 'mongodb://localhost:27017/mentorize2';
 const options = {
-  useCreateIndex: true,
-  useFindAndModify: false,
   useUnifiedTopology: true,
   useNewUrlParser: true
 };

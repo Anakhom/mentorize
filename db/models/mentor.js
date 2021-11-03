@@ -1,10 +1,18 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model} = require('mongoose');
+// const { mongoose } = require('mongoose');
 
-const mentorSchema = new Schema({
-  user_id: {
-    type: Number,
+const mentorSchema = new Schema({ 
+  login: {
+    type: String,
     required: true,
-    unique: true,
+  }, 
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
   },
   firstName: {
     type: String,
@@ -22,19 +30,18 @@ const mentorSchema = new Schema({
     type: String,
     required: true,
   },
-  stack: {
-    type: String,
-    required: true,
-  },
+  stack: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Tag',
+  }],
   createdAt: {
-    type: Date,
-    default: Date,
+    type: Date, 
+    default: Date.now
   },
   updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
+    type: Date, 
+    default: Date.now
+  }
 });
 
-const Mentor = model('Mentor', mentorSchema);
-module.exports = Mentor;
+module.exports = model('Mentor', mentorSchema);

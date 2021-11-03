@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-
-const userSchema = new mongoose.Schema({ 
+const userSchema = new Schema({
   login: {
     type: String,
     required: true,
@@ -14,9 +13,27 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  mentor: Boolean,
-  createdAt: {type: Date, default: Date.now},
-  updatedAt: {type: Date, default: Date.now}
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  aboutMe: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('User', userSchema);
+const Mentor = model('User', userSchema);
+module.exports = Mentor;
