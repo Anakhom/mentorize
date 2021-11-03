@@ -1,3 +1,4 @@
+console.log(12312312313123423232)
 const form = document.forms.loginForm;
 
 function failSignin(form) {
