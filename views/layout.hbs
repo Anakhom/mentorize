@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  {{!-- <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
   <link rel="stylesheet" href="/css/style.css">
-  <script defer src="/js/application.js"></script>
-  
+  <script defer src='/js/profiler.js'></script>
   {{#if isLogin}}
     <script defer src='/js/login.js'></script>
   {{/if}}
@@ -24,6 +23,7 @@
         <ul>
           {{#if username}}
           <p>Привет, {{username}}</p>
+          <li><a href="/profile/{{id}}">Личный Кабинет</a></li>
           <li><a href="/signout">Выйти</a></li>
           {{else}}
           <li><a href="/auth/register?mentor=mentor">Стать ментором</a></li>

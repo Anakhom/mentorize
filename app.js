@@ -7,6 +7,7 @@ const session = require('./middleware/createSession');
 const isUser = require('./middleware/isUser');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth.js');
+const profileRouter = require('./routes/profile.js');
 const signoutRouter = require('./routes/signout.js');
 const dbConnect = require('./db/connect');
 
@@ -28,6 +29,7 @@ app.use(isUser);
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/profile', profileRouter);
 app.use('/signout', signoutRouter);
 
 app.listen(PORT, () => {
