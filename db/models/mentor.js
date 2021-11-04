@@ -1,11 +1,11 @@
-const { Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 // const { mongoose } = require('mongoose');
 
-const mentorSchema = new Schema({ 
+const mentorSchema = new Schema({
   login: {
     type: String,
     required: true,
-  }, 
+  },
   email: {
     type: String,
     required: true,
@@ -36,13 +36,13 @@ const mentorSchema = new Schema({
   }]
   ,
   createdAt: {
-    type: Date, 
-    default: Date.now
+    type: Date,
+    default: Date.now,
   },
   updatedAt: {
-    type: Date, 
-    default: Date.now
-  }
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = model('Mentor', mentorSchema);

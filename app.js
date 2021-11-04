@@ -1,11 +1,13 @@
 const express = require('express');
 const path = require('path');
-const logger = require('morgan')
+const mongoose = require('mongoose');
+const logger = require('morgan');
 require('dotenv').config();
 
 const session = require('./middleware/createSession');
 const isUser = require('./middleware/isUser');
 const indexRouter = require('./routes/index');
+const renderMentors = require('./routes/index');
 const authRouter = require('./routes/auth.js');
 const profileRouter = require('./routes/profile.js');
 const signoutRouter = require('./routes/signout.js');
@@ -28,6 +30,7 @@ app.use(session);
 app.use(isUser);
 
 app.use('/', indexRouter);
+app.use('/mentors', renderMentors);
 app.use('/auth', authRouter);
 app.use('/profile', profileRouter);
 app.use('/signout', signoutRouter);
