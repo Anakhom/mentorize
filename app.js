@@ -4,6 +4,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
+const mentorPageRouter = require('./routes/mentorPageRouter');
 
 const app = express();
 const PORT = 3000;
