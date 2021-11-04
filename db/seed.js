@@ -92,6 +92,22 @@ const { dbUrl, options } = require('./config');
           '6182396ce8db9c297fa3f66c',
         ],
       },
+    await User.insertMany([
+      { login: "pupkin1", 
+      email: "pupkin@pi.ru", 
+      password: '123123', 
+      firstName: "Бил", 
+      lastName: "Гейтс", 
+      aboutMe: 'Обращайтесь', 
+      experience: 'Microsoft',
+      stack: [
+        '6181490077384b3d748f9484', 
+        '6181490077384b3d748f9485',
+        '6181490077384b3d748f9489',
+        '6181490077384b3d748f948b',
+        '6181490077384b3d748f9494',
+      ],  
+    },
     ]);
   }
   catch (e) {

@@ -1,0 +1,22 @@
+<main id="profileMain">
+<h2>Добро пожаловать в личный кабинет, {{username}}</h2>
+
+{{#if User}}
+  <p>Здесь ты можешь рассказать о себе, чтобы менторы узнали тебя лучше.</p>
+
+  <form data-id="{{id}}" id="currentInfo">
+      <p>Ваше имя: {{user.firstName}} {{user.lastName}}</p>
+      <p>О вас: {{user.aboutMe}}</p>
+    <a href="/profile/{{id}}/edit">&#9998;</a>
+  </form>
+
+{{else}}
+  <p>Здесь ты можешь рассказать о себе, чтобы ученики узнали тебя лучше.</p>
+
+  <form data-id="{{id}}" id="currentInfo">
+    <p>Ваше имя: {{mentor.firstName}} {{mentor.lastName}}</p>
+    <p>О вас: {{mentor.aboutMe}}</p>
+    <a href="/profile/{{id}}/edit">&#9998;</a>
+  </form>
+{{/if}}
+</main>
