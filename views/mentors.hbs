@@ -1,0 +1,13 @@
+<h2>Наши менторы</h2>
+<div>
+{{#each mentors}}
+<h4>{{this.firstName}} {{this.lastName}}</h4>
+<p>Обо мне: {{this.aboutMe}}</p>
+<p>Опыт: {{this.experience}}</p>
+<p>Технологии:</p>
+{{#each this.stack}}
+<p>{{this.tagname}}</p>
+{{/each}}
+<hr>
+{{/each}}
+</div>

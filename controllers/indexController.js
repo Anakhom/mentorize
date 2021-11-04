@@ -1,3 +1,4 @@
 exports.renderMainPage = async (req, res) => {
-  res.render('index');
+  res.render('index', { id: req.session?.user?.id });
 }
+
