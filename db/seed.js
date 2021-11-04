@@ -12,30 +12,93 @@ const { dbUrl, options } = require('./config');
 
     console.log('Seeding...');
 
+    // await Tag.insertMany([
+    //   { tagname: "JavaScript" },
+    //   { tagname: "React" },
+    //   { tagname: "Java" },
+    //   { tagname: "Python" },
+    //   { tagname: "PostgreSQL" },
+    //   { tagname: "Node.js" },
+    //   { tagname: "PHP" },
+    //   { tagname: "MongoDB" },
+    //   { tagname: "Oracle" },
+    //   { tagname: "Cassandra" },
+    //   { tagname: "React Native" },
+    //   { tagname: "Go" },
+    //   { tagname: "Ruby" },
+    //   { tagname: "Algorithms" },
+    //   { tagname: "Test-cases" },
+    //   { tagname: "Soft skills" },
+    //   { tagname: "Time management" },
+    //   { tagname: "Crisis management" },
+    //   { tagname: "HR training" },
+    //   { tagname: "Finance modelling" },
+    //   { tagname: "Data analysis" },
+    //   { tagname: "C++" },
+    //   { tagname: "AI & ML" },
+    //   { tagname: "Databases" },
+    // ]);
+
     await Mentor.insertMany([
-      { login: "denis01", 
-      email: "denis@denis.ru", 
-      password: '123123', 
-      firstName: "Denis", 
-      lastName: "Obraztsov", 
-      aboutMe: 'Люблю кодить. Помогу советом.', 
-      experience: 'Elbrus Bootcamp - полгода',
-      stack: [
-        '6181490077384b3d748f9484', 
-        '6181490077384b3d748f9485',
-        '6181490077384b3d748f9489',
-        '6181490077384b3d748f948b',
-        '6181490077384b3d748f9494',
-      ],  
-    },
+      {
+        login: "denis01",
+        email: "denis@denis.ru",
+        password: '123123',
+        firstName: "Denis",
+        lastName: "Obraztsov",
+        aboutMe: 'Люблю кодить. Помогу советом.',
+        experience: 'Elbrus Bootcamp - полгода',
+        stack: [
+          '6182396ce8db9c297fa3f667',
+          '6182396ce8db9c297fa3f668',
+          '6182396ce8db9c297fa3f66b',
+          '6181490077384b3d748f948b',
+          '6182396ce8db9c297fa3f66c',
+        ],
+      },
+    ]);
+    await Mentor.insertMany([
+      {
+        login: "tapac",
+        email: "tapac@tapac.ru",
+        password: '123123',
+        firstName: "Tapac",
+        lastName: "Golomozi",
+        aboutMe: 'Люблю вкусно кушать. Помогу советом.',
+        experience: 'Elbrus Bootcamp',
+        stack: [
+          '6182396ce8db9c297fa3f667',
+          '6182396ce8db9c297fa3f668',
+          '6182396ce8db9c297fa3f66b',
+          '6181490077384b3d748f948b',
+          '6182396ce8db9c297fa3f66c',
+        ],
+      },
+    ]);
+    await Mentor.insertMany([
+      {
+        login: "roman",
+        email: "roman@roman.ru",
+        password: '123123',
+        firstName: "Roman",
+        lastName: "Paramzin",
+        aboutMe: 'Во всем виноваты индусы. Помогу советом.',
+        experience: 'Elbrus Bootcamp',
+        stack: [
+          '6182396ce8db9c297fa3f667',
+          '6182396ce8db9c297fa3f668',
+          '6182396ce8db9c297fa3f66b',
+          '6181490077384b3d748f948b',
+          '6182396ce8db9c297fa3f66c',
+        ],
+      },
     ]);
   }
   catch (e) {
     console.error('Error:', e.message);
   }
   finally {
-    await mongoose.connection.close()
+    await mongoose.connection.close();
     console.log('DB closed');
   }
-})()
-
+})();
