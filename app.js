@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const renderMentors = require('./routes/index');
 const authRouter = require('./routes/auth.js');
 const profileRouter = require('./routes/profile.js');
+const tagRouter = require('./routes/tag.js')
 const signoutRouter = require('./routes/signout.js');
 const dbConnect = require('./db/connect');
 
@@ -33,6 +34,7 @@ app.use('/', indexRouter);
 app.use('/mentors', renderMentors);
 app.use('/auth', authRouter);
 app.use('/profile', profileRouter);
+app.use('/tag', tagRouter);
 app.use('/signout', signoutRouter);
 
 app.listen(PORT, () => {

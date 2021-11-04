@@ -7,7 +7,7 @@
   <form data-id="{{id}}" id="currentInfo">
       <p>Ваше имя: {{user.firstName}} {{user.lastName}}</p>
       <p>О вас: {{user.aboutMe}}</p>
-    <a href="/profile/{{id}}/edit">&#9998;</a>
+    <a href="/profile/{{userId}}/edit">&#9998;</a>
   </form>
 
 {{else}}
@@ -16,7 +16,12 @@
   <form data-id="{{id}}" id="currentInfo">
     <p>Ваше имя: {{mentor.firstName}} {{mentor.lastName}}</p>
     <p>О вас: {{mentor.aboutMe}}</p>
-    <a href="/profile/{{id}}/edit">&#9998;</a>
+    <p>Опыт Работы: {{mentor.experience}}</p>
+    <p>Технологический стэк:</p>
+    {{#each mentor.stack}}
+    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+    {{/each}}
+    <a href="/profile/{{userId}}/edit">&#9998;</a>
   </form>
 {{/if}}
 </main>
