@@ -2,48 +2,21 @@
 <h2>Добро пожаловать в личный кабинет, {{username}}</h2>
 
 {{#if User}}
-<p>Здесь ты можешь рассказать о себе, чтобы менторы узнали тебя лучше.</p>
+  <p>Здесь ты можешь рассказать о себе, чтобы менторы узнали тебя лучше.</p>
 
-<div id="currentInfo">
-    <p>Ваше имя: {{user.firstName}} {{user.lastName}}</p>
-    <p>О вас: {{user.aboutMe}}</p>
-  <button id="editButton">&#9998;</button>
-</div>
-
-<div id="edit">
-  <form action="/profile/{{id}}/edit" method='POST' name="editForm">
-    <p>Имя:</p>
-    <input class="newName" type="text" name="newName" placeholder="{{user.firstName}}">
-    <p>Фамилия:</p>
-    <input class='newLastName' type="text" name="newLastName" placeholder="{{user.lastName}}">
-
-    <p>О вас:</p>
-    <textarea type="text" id="aboutYou" name="aboutYou" placeholder="{{user.aboutMe}}"></textarea>
-    <button type="submit">Редактировать</button>
+  <form data-id="{{id}}" id="currentInfo">
+      <p>Ваше имя: {{user.firstName}} {{user.lastName}}</p>
+      <p>О вас: {{user.aboutMe}}</p>
+    <a href="/profile/{{id}}/edit">&#9998;</a>
   </form>
-</div>
 
 {{else}}
-<p>Здесь ты можешь рассказать о себе, чтобы ученики узнали тебя лучше.</p>
+  <p>Здесь ты можешь рассказать о себе, чтобы ученики узнали тебя лучше.</p>
 
-<div id="currentInfo">
-  <p>Ваше имя: {{mentor.firstName}} {{mentor.lastName}}</p>
-  <p>О вас: {{mentor.aboutMe}}</p>
-  <button id="editButton">&#9998;</button>
-</div>
-
-<div id="edit">
-  <form action="/profile/{{id}}/edit" method='POST' name="editForm">
-    <p>Имя:</p>
-    <input class="newName" type="text" name="newName" placeholder="{{mentor.firstName}}">
-    
-    <p>Фамилия:</p>
-    <input class='newLastName' type="text" name="newLastName" placeholder="{{mentor.lastName}}">
-
-    <p>О вас:</p>
-    <textarea type="text" id="aboutYou" name="aboutYou" placeholder="{{mentor.aboutMe}}"></textarea>
-    <button type="submit">Редактировать</button>
+  <form data-id="{{id}}" id="currentInfo">
+    <p>Ваше имя: {{mentor.firstName}} {{mentor.lastName}}</p>
+    <p>О вас: {{mentor.aboutMe}}</p>
+    <a href="/profile/{{id}}/edit">&#9998;</a>
   </form>
-</div>
 {{/if}}
 </main>

@@ -1,15 +1,8 @@
 const profileMain = document.getElementById('profileMain');
-const currentInfoDiv = document.getElementById('currentInfo');
+const currentInfoForm = document.getElementById('currentInfo');
 const editDiv = document.getElementById('edit');
 const editButton = document.getElementById('editButton')
 const editForm = document.forms.editForm;
-
-editDiv.style.visibility = "hidden";
-
-editButton?.addEventListener('click', () => {
-  currentInfoDiv.style.visibility = "hidden";
-  editDiv.style.visibility = "visible";
-})
 
 editForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -26,10 +19,8 @@ editForm?.addEventListener('submit', async (event) => {
       aboutMe: event.target.aboutYou.value
     })
   });
-    
-  editDiv.style.visibility = "hidden";
   
   if (response.status === 200){
-    location.reload();
+    window.location.href = `/profile/${id}`
   }
 })
