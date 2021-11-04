@@ -16,6 +16,21 @@ exports.renderProfile = async (req, res) => {
   }
 }
 
+exports.renderEditProfile =  async (req, res) => {
+  let id = req.params.id;
+
+  const user = await User.findById(id).exec();
+  const mentor = await Mentor.findById(id).exec();
+  
+  if (user){
+    res.render('profile/editProfile', { User: true, id, user})
+  }
+
+  if (mentor){
+    res.render('profile/editProfile', { id, mentor})
+  }
+}
+
 exports.editProfile = async (req, res) => {
   let id = req.params.id;
   
