@@ -2,7 +2,7 @@ const profileMain = document.getElementById('profileMain');
 const currentInfoForm = document.getElementById('currentInfo');
 
 const editDiv = document.getElementById('edit');
-const editButton = document.getElementById('editButton')
+const editButton = document.getElementById('editButton');
 const editForm = document.forms.editForm;
 
 const addStackButton = document.getElementById('addStack');
@@ -18,26 +18,26 @@ editForm?.addEventListener('submit', async (event) => {
   const response = await fetch(`/profile/${userId}/edit`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       firstName: event.target.newName.value,
       lastName: event.target.newLastName.value,
       aboutMe: event.target.aboutMe.value,
-      experience: event.target.experience?.value
-    })
+      experience: event.target.experience?.value,
+    }),
   });
-  
+
   //redirecting to the user's profile
-  if (response.status === 200){
-    window.location.href = `/profile/${userId}`
+  if (response.status === 200) {
+    window.location.href = `/profile/${userId}`;
   }
-})
+});
 
 addStackButton?.addEventListener('click', async (event) => {
   //retrieveing user id
   let userId = event.target.value;
-  
+
   //retrieveing selected tags from the dropdown
   let selectedTagId = allTagsSelect.options[allTagsSelect.selectedIndex].value;
   let selectedTagName = allTagsSelect.options[allTagsSelect.selectedIndex].innerHTML;
@@ -48,25 +48,25 @@ addStackButton?.addEventListener('click', async (event) => {
   const response = await fetch(`/profile/${userId}/addStack`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       tagId: selectedTagId,
       tagName: selectedTagName,
-    })
+    }),
   });
 
-  let newTag = `<a href="/tag/${selectedTagId}">${selectedTagName}</a>`
+  let newTag = `<a href="/tag/${selectedTagId}">${selectedTagName}</a>`;
 
   //instantly adding new tags
-  if (response.status === 200){
+  if (response.status === 200) {
     allCurrentTags.insertAdjacentHTML('beforeend', newTag);
   }
 
-  if (response.status === 400){
+  if (response.status === 400) {
     alert('у тебя уже есть этот навык!');
   }
-})
+});
 
 deleteStackButton?.addEventListener('click', async (event) => {
   //retrieveing user id
@@ -82,17 +82,17 @@ deleteStackButton?.addEventListener('click', async (event) => {
   const response = await fetch(`/profile/${userId}/deleteStack`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       tagId: selectedTagId,
       tagName: selectedTagName,
-    })
+    }),
   });
 
   //instantly removing the selected tag 
-  if (response.status === 200){
-    console.log(123123)
-    allCurrentTags.removeChild(selectedTag)
+  if (response.status === 200) {
+    console.log(123123);
+    allCurrentTags.removeChild(selectedTag);
   }
-})
+});

@@ -7,4 +7,4 @@ const options = {
 };
 
 module.exports = { dbUrl, options };
-console.log(dbUrl);
+
