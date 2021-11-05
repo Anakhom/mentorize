@@ -24,7 +24,8 @@ editForm?.addEventListener('submit', async (event) => {
     body: JSON.stringify({
       firstName: event.target.newName.value,
       lastName: event.target.newLastName.value,
-      aboutMe: event.target.aboutMe.value
+      aboutMe: event.target.aboutMe.value,
+      experience: event.target.experience?.value
     })
   });
   
