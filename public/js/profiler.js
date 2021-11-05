@@ -12,8 +12,7 @@ const allTagsSelect = document.getElementById('allTagsSelect');
 
 editForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  //retreiving user id
-  let userId = event.target.action.slice(30, -5);
+  let userId = addStackButton.value;
 
   //sending input values to the server
   const response = await fetch(`/profile/${userId}/edit`, {
