@@ -10,10 +10,10 @@ loginForm?.addEventListener('submit', async (event) => {
 
   const { method, action } = event.target;
   let response;
-  
-  try{
-    response = await fetch(action, { 
-      method, 
+
+  try {
+    response = await fetch(action, {
+      method,
       headers: {
         'Content-Type': 'application/json',
       },

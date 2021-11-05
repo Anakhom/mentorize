@@ -56,7 +56,7 @@ exports.editProfile = async (req, res) => {
       await User.findByIdAndUpdate(userId, {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        aboutMe: req.body.aboutMe
+        aboutMe: req.body.aboutMe,
       });
       res.status(200).end();
     }
@@ -66,15 +66,14 @@ exports.editProfile = async (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         aboutMe: req.body.aboutMe,
-        experience: req.body.experience
+        experience: req.body.experience,
       });
       res.status(200).end();
     }
-
   } catch (err) {
     console.log(err);
   }
-}
+};
 
 exports.addStack = async (req, res) => {
   //getting selected tags from the browser
@@ -88,7 +87,7 @@ exports.addStack = async (req, res) => {
 
     //variable for checking if the selected tag
     //is already in the database
-    let checkStack = mentor.stack.find((elem) => elem._id.valueOf() === selectedTagId)
+    let checkStack = mentor.stack.find((elem) => elem._id.valueOf() === selectedTagId);
 
     if (!checkStack) {
       //adding the selected tag to the database
@@ -100,7 +99,7 @@ exports.addStack = async (req, res) => {
     console.log(err);
   }
   res.status(400).end();
-}
+};
 
 exports.deleteStack = async (req, res) => {
   let selectedTagId = req.body.tagId;

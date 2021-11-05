@@ -1,29 +1,38 @@
-{{#if tagSearch}}
+<div id='mentors' class=" row row-cols-1 w-75   mx-auto row-cols-3 ">
+  {{#if tagSearch}}
   <h2>Менторы, которые применяют {{tagName.tagname}} </h2>
   {{#each stackMentors}}
-    <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
-    <p>Обо мне: {{this.aboutMe}}</p>
-    <p>Опыт: {{this.experience}}</p>
-    <p>Технологии:</p>
+  <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+  <p>Обо мне: {{this.aboutMe}}</p>
+  <p>Опыт: {{this.experience}}</p>
+  <p>Технологии:</p>
   {{#each this.stack}}
-    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+  <a href="/tag/{{this._id}}">{{this.tagname}}</a>
   {{/each}}
-    <hr>
+  <hr>
   {{/each}}
 
 
-{{else}}
+  {{else}}
   <h2>Наши менторы</h2>
-  <div>
-  {{#each mentors}}
-    <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
-    <p>Обо мне: {{this.aboutMe}}</p>
-    <p>Опыт: {{this.experience}}</p>
-    <p>Технологии:</p>
-  {{#each this.stack}}
-    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
-  {{/each}}
-    <hr>
-  {{/each}}
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://ca.slack-edge.com/T02CL8BNTS7-U02G9AQM7QR-1f38d69de09e-512" class="card-img-top h-75" alt="фото1">
+      <div class="card-body">
+        {{#each mentors}}
+        <h5 class="card-title"><a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a></h5>
+        <p class="card-text">О себе: {{this.aboutMe}}</p>
+        <p class="card-text">Опыт: {{this.experience}}</p>
+        <div class="card-footer">
+        <p class="card-text">Технологии:</p>
+        <small class="text-muted"></small>
+        {{#each this.stack}}
+        <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+        {{/each}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
   </div>
-{{/if}}
+  {{/if}}
+</div>

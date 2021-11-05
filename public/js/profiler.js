@@ -25,15 +25,15 @@ editForm?.addEventListener('submit', async (event) => {
       firstName: event.target.newName.value,
       lastName: event.target.newLastName.value,
       aboutMe: event.target.aboutMe.value,
-      experience: event.target.experience?.value
-    })
+      experience: event.target.experience?.value,
+    }),
   });
 
   //redirecting to the user's profile
   if (response.status === 200) {
-    window.location.href = `/profile/${userId}`
+    window.location.href = `/profile/${userId}`;
   }
-})
+});
 
 addStackButton?.addEventListener('click', async (event) => {
   //retrieveing user id
@@ -49,15 +49,15 @@ addStackButton?.addEventListener('click', async (event) => {
   const response = await fetch(`/profile/${userId}/addStack`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       tagId: selectedTagId,
       tagName: selectedTagName,
-    })
+    }),
   });
 
-  let newTag = `<a href="/tag/${selectedTagId}">${selectedTagName}</a>`
+  let newTag = `<a href="/tag/${selectedTagId}">${selectedTagName}</a>`;
 
   //instantly adding new tags
   if (response.status === 200) {
@@ -67,7 +67,7 @@ addStackButton?.addEventListener('click', async (event) => {
   if (response.status === 400) {
     alert('у тебя уже есть этот навык!');
   }
-})
+});
 
 deleteStackButton?.addEventListener('click', async (event) => {
   //retrieveing user id
@@ -83,17 +83,17 @@ deleteStackButton?.addEventListener('click', async (event) => {
   const response = await fetch(`/profile/${userId}/deleteStack`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       tagId: selectedTagId,
       tagName: selectedTagName,
-    })
+    }),
   });
 
   //instantly removing the selected tag 
   if (response.status === 200) {
-    console.log(123123)
-    allCurrentTags.removeChild(selectedTag)
+    console.log(123123);
+    allCurrentTags.removeChild(selectedTag);
   }
-})
+});
