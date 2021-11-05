@@ -6,11 +6,13 @@ require('dotenv').config();
 const session = require('./middleware/createSession');
 const isUser = require('./middleware/isUser');
 const indexRouter = require('./routes/index');
+
 const singleMentorRouter = require('./routes/singleMentor.js');
+
 const renderMentors = require('./routes/index');
 const authRouter = require('./routes/auth.js');
 const profileRouter = require('./routes/profile.js');
-const tagRouter = require('./routes/tag.js')
+const tagRouter = require('./routes/tag.js');
 const signoutRouter = require('./routes/signout.js');
 const dbConnect = require('./db/connect');
 

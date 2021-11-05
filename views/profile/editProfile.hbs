@@ -1,23 +1,25 @@
 <main id="profileMain">
-<h2>Редактирование профиля</h2>
+ <div class='text-center'><h2>Редактирование профиля</h2></div>
+
 
 {{#if User}}
   <div id="edit">
-    <form action="/profile/{{userId}}/edit" method='POST' name="editForm">
+    <form class="form-group col-6 mt-4 mx-auto" action="/profile/{{userId}}/edit" method='POST' name="editForm">
       <p>Имя:</p>
-      <input class="newName" type="text" name="newName" value="{{user.firstName}}">
+      <input class="newName form-control" type="text" name="newName" value="{{user.firstName}}">
       <p>Фамилия:</p>
-      <input class='newLastName' type="text" name="newLastName" value="{{user.lastName}}">
+      <input class='newLastName form-control' type="text" name="newLastName" value="{{user.lastName}}">
 
       <p>О вас:</p>
-      <input type="text" id="aboutMe" name="aboutMe" value="{{user.aboutMe}}"></input>
-      <button type="submit" value="{{userId}}" id="editButton" >Редактировать</button>
+      <input class="form-control " type="text" id="aboutMe" name="aboutMe" value="{{user.aboutMe}}"></input>
+      <div class='d-flex justify-content-center mx-auto mt-4'><button class='btn-success btn-center' type="submit" value="{{userId}}" id="editButton" >Редактировать</button></div>
+      
     </form> 
   </div>
 
 {{else}}
-  <div id="edit">
-    <form action="/profile/{{userId}}/edit" method='POST' name="editForm">
+  <div  id="edit">
+    <form id='border1' class='border border-dark' action="/profile/{{userId}}/edit" method='POST' name="editForm">
       <p>Имя:</p>
       <input class="newName" type="text" name="newName" value="{{mentor.firstName}}">
       
