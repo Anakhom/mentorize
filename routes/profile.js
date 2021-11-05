@@ -1,12 +1,13 @@
 const express = require('express');
+
 const router = express.Router();
-const { 
-  renderProfile, 
+const {
+  renderProfile,
   renderEditProfile,
-  editProfile, 
-  addStack, 
-  deleteStack
-} = require("../controllers/profileController");
+  editProfile,
+  addStack,
+  deleteStack,
+} = require('../controllers/profileController');
 
 router
   .route('/:userId')
