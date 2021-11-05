@@ -66,7 +66,8 @@ exports.editProfile = async (req, res) => {
       await Mentor.findByIdAndUpdate(userId, { 
         firstName: req.body.firstName, 
         lastName: req.body.lastName, 
-        aboutMe: req.body.aboutMe 
+        aboutMe: req.body.aboutMe,
+        experience: req.body.experience 
       });
       res.status(200).end();
     }
