@@ -1,0 +1,14 @@
+* {
+  overflow-x: hidden;
+  font-family: 'Montserrat';
+}
+
+#sitename {
+  font-size: 35px;
+}
+
+.belowcaption {
+  background-color: rgba(160, 148, 131, 0.726);
+  width: 20cm;
+  position: absolute;
+}
