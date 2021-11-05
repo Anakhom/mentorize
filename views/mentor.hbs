@@ -1,0 +1,7 @@
+<a href="/mentor/{{mentor._id}}">{{mentor.firstName}} {{mentor.lastName}}</a>
+    <p>Обо мне: {{mentor.aboutMe}}</p>
+    <p>Опыт: {{mentor.experience}}</p>
+    <p>Технологии:</p>
+  {{#each mentor.stack}}
+    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+  {{/each}}

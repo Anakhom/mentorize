@@ -11,8 +11,8 @@
 
       <p>О вас:</p>
       <input type="text" id="aboutMe" name="aboutMe" value="{{user.aboutMe}}"></input>
-      <button type="submit">Редактировать</button>
-    </form>
+      <button type="submit" value="{{userId}}" id="editButton" >Редактировать</button>
+    </form> 
   </div>
 
 {{else}}
@@ -31,7 +31,7 @@
       <input type="text" name="experience" value="{{mentor.experience}}"></input>
       <br>
       <br>
-      <button type="submit">Редактировать</button>
+      <button type="submit" value="{{userId}}" id="editButton">Редактировать</button>
     </form>
 
     <p>Технологии:</p>
