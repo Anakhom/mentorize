@@ -1,20 +1,20 @@
-*{
- overflow-x: hidden;
+* {
+  overflow-x: hidden;
 }
 #sitename {
   font-size: 50px;
-  margin-right;
-  color:black}
+
+  color: black;
+}
 
 #navbarItems {
- font-size: 20px;
- margin-left: 17cm;
- 
+  font-size: 20px;
+  margin-left: 17cm;
 }
 
 .nav-item {
- width: 6cm;
- color:rgb(245, 245, 245)
+  width: 6cm;
+  color: rgb(245, 245, 245);
 }
 
 /* .carouseltext {
@@ -22,18 +22,14 @@
 } */
 
 .belowcaption {
- 
- background-color: rgba(160, 148, 131, 0.726);
- width: 25cm;
-position: absolute;
-
+  background-color: rgba(160, 148, 131, 0.726);
+  width: 25cm;
+  position: absolute;
 }
-.footer{
- color: black;
+.footer {
+  color: black;
 }
 
 #mentors {
- margin-top: 3cm;
+  margin-top: 3cm;
 }
-
-
