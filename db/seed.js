@@ -11,32 +11,6 @@ const { dbUrl, options } = require('./config');
     console.log('Mongoose connected to database successfully');
 
     console.log('Seeding...');
-
-    // await Tag.insertMany([
-    //   { tagname: "JavaScript" },
-    //   { tagname: "React" },
-    //   { tagname: "Java" },
-    //   { tagname: "Python" },
-    //   { tagname: "PostgreSQL" },
-    //   { tagname: "Node.js" },
-    //   { tagname: "PHP" },
-    //   { tagname: "MongoDB" },
-    //   { tagname: "Oracle" },
-    //   { tagname: "Cassandra" },
-    //   { tagname: "React Native" },
-    //   { tagname: "Go" },
-    //   { tagname: "Ruby" },
-    //   { tagname: "Algorithms" },
-    //   { tagname: "Test-cases" },
-    //   { tagname: "Soft skills" },
-    //   { tagname: "Time management" },
-    //   { tagname: "Crisis management" },
-    //   { tagname: "HR training" },
-    //   { tagname: "Finance modelling" },
-    //   { tagname: "Data analysis" },
-    //   { tagname: "C++" },
-    //   { tagname: "AI & ML" },
-    //   { tagname: "Databases" },
     // ]);
 
     await Mentor.insertMany([
