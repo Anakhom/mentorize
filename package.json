@@ -9,6 +9,9 @@
     "seed": "node seed.js",
     "dev": "nodemon app.js --ignore sessions"
   },
+  "engines":{
+    "node": "16.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anakhom/mentorize.git"
