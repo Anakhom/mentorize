@@ -1,8 +1,8 @@
 const Mentor = require('../db/models/mentor');
-const Tag = require('../db/models/tag');
 
 exports.renderMentors = async (req, res) => {
   let mentors;
+
   try {
     mentors = await Mentor.find().populate('stack');
   } catch (error) {

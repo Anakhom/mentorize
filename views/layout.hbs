@@ -21,17 +21,17 @@
         <a href="/" class="header-title">Mentorize</a>
       </h1>
         <ul>
-         {{#if username}}
+        {{#if username}}
           <p>Привет, {{username}}</p>
-          <li><a href="/profile/{{id}}">Личный Кабинет</a></li>
+          <li><a href="/profile/{{userId}}">Личный Кабинет</a></li>
           <li><a class="linkStyles" href="/mentors">Менторы</a></li>
           <li><a href="/signout">Выйти</a></li>
-          {{else}}
+        {{else}}
           <li><a class="linkStyles" href="/mentors">Менторы</a></li>
           <li><a href="/auth/register?mentor=mentor">Стать ментором</a></li>
           <li><a href="/auth/register?user=user">Подобрать ментора</a></li>
           <li><a href="/auth/login">Войти</a></li>
-          {{/if}}
+        {{/if}}
         </ul>
     </div>
   </nav>

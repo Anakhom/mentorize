@@ -1,28 +1,29 @@
 {{#if mentor}}
-<h2>Здравствуй, будущий ментор. Пожалуйста, пройди регистрацию:</h2>
+  <h2>Здравствуй, будущий ментор. Пожалуйста, пройди регистрацию:</h2>
 {{else}}
-<h2>Перед тем, как найти своего сэнсея, пожалуйста, пройди регистрацию:</h2>
+  <h2>Перед тем, как найти своего сэнсея, пожалуйста, пройди регистрацию:</h2>
 {{/if}}
 <form id="registerForm" method="POST" action="/auth/register">
-  <div class="form-group">
-    <label for="username">Имя пользователя:</label>
+    <div class="form-group">
+      <label for="username">Имя пользователя:</label>
       <input id="username" name="name" type="text" required pattern="[A-Za-z]\w+" minlength="4"
-        title="Только латинские буквы, цифры и символ _">
-  </div>
-  <div class="form-group">
-    <label for="email">Имейл:</label>
-      <input id="email" name="email" type="text">
+      title="Только латинские буквы, цифры и символ _">
+    </div>
 
-  </div>
-  <div class="form-group">
-    <label for="password">Пароль:</label>
+    <div class="form-group">
+      <label for="email">Имейл:</label>
+      <input id="email" name="email" type="text">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль:</label>
       <input id="password" name="password" type="password" required minlength="6">
-  </div>
+    </div>
   {{#if mentor}}
-  <input type="hidden" name="hidden" value='{{mentor}}'>
-  <button type="submit">Стать ментором!</button>
+    <input type="hidden" name="hidden" value='{{mentor}}'>
+    <button type="submit">Стать ментором!</button>
   {{else}}
-  <input type="hidden" name="hidden" value='{{user}}'>
-  <button type="submit">Искать ментора!</button>
+    <input type="hidden" name="hidden" value='{{user}}'>
+    <button type="submit">Искать ментора!</button>
   {{/if}}
 </form>

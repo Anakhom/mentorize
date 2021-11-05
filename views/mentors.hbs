@@ -1,18 +1,29 @@
-<h2>Наши менторы</h2>
-<select name="" id="">
-<a href=""></a>
-<a href=""></a>
-<a href=""></a>
-</select>
-<div>
-{{#each mentors}}
-<h4>{{this.firstName}} {{this.lastName}}</h4>
-<p>Обо мне: {{this.aboutMe}}</p>
-<p>Опыт: {{this.experience}}</p>
-<p>Технологии:</p>
-{{#each this.stack}}
-<p>{{this.tagname}}</p>
-{{/each}}
-<hr>
-{{/each}}
-</div>
+{{#if tagSearch}}
+  <h2>Менторы, которые применяют {{tagName.tagname}} </h2>
+  {{#each stackMentors}}
+    <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+    <p>Обо мне: {{this.aboutMe}}</p>
+    <p>Опыт: {{this.experience}}</p>
+    <p>Технологии:</p>
+  {{#each this.stack}}
+    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+  {{/each}}
+    <hr>
+  {{/each}}
+
+
+{{else}}
+  <h2>Наши менторы</h2>
+  <div>
+  {{#each mentors}}
+    <a href="/mentor/{{this._id}}">{{this.firstName}} {{this.lastName}}</a>
+    <p>Обо мне: {{this.aboutMe}}</p>
+    <p>Опыт: {{this.experience}}</p>
+    <p>Технологии:</p>
+  {{#each this.stack}}
+    <a href="/tag/{{this._id}}">{{this.tagname}}</a>
+  {{/each}}
+    <hr>
+  {{/each}}
+  </div>
+{{/if}}

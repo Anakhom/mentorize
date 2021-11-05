@@ -3,21 +3,21 @@
 
 {{#if User}}
   <div id="edit">
-    <form action="/profile/{{id}}/edit" method='POST' name="editForm">
+    <form action="/profile/{{userId}}/edit" method='POST' name="editForm">
       <p>Имя:</p>
       <input class="newName" type="text" name="newName" value="{{user.firstName}}">
       <p>Фамилия:</p>
       <input class='newLastName' type="text" name="newLastName" value="{{user.lastName}}">
 
       <p>О вас:</p>
-      <input type="text" id="aboutYou" name="aboutYou" value="{{user.aboutMe}}"></input>
+      <input type="text" id="aboutMe" name="aboutMe" value="{{user.aboutMe}}"></input>
       <button type="submit">Редактировать</button>
     </form>
   </div>
 
 {{else}}
   <div id="edit">
-    <form action="/profile/{{id}}/edit" method='POST' name="editForm">
+    <form action="/profile/{{userId}}/edit" method='POST' name="editForm">
       <p>Имя:</p>
       <input class="newName" type="text" name="newName" value="{{mentor.firstName}}">
       
@@ -25,9 +25,29 @@
       <input class='newLastName' type="text" name="newLastName" value="{{mentor.lastName}}">
 
       <p>О вас:</p>
-      <input type="text" id="aboutYou" name="aboutYou" value="{{mentor.aboutMe}}"></input>
+      <input type="text" name="aboutMe" value="{{mentor.aboutMe}}"></input>
+
+      <p>Опыт работы:</p>
+      <input type="text" name="experience" value="{{mentor.experience}}"></input>
+      <br>
+      <br>
       <button type="submit">Редактировать</button>
     </form>
+
+    <p>Технологии:</p>
+      <div id="allCurrentTags">
+        {{#each mentor.stack}}
+          <a href="/tag/{{this._id}}" id="{{this._id}}">{{this.tagname}}</a>
+        {{/each}}
+      </div>
+    <br>
+    <select name="tags" id="allTagsSelect">
+      {{#each allTags}}
+        <option value="{{this._id}}">{{this.tagname}}</option>
+      {{/each}}
+    </select>
+    <button id="addStack" value="{{userId}}">Добавить в стэк</button>
+    <button id="deleteStack" value="{{userId}}">Удалить из стэка</button>
   </div>
 {{/if}}
 </main>
